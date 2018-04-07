@@ -1,0 +1,4 @@
+enterPassengerDetails_firstName=//*[@id='content']/div[2]/div[2]/div[4]/div[1]/div/div[1]/div/div/div/div/p[1]/span[2]/input
+enterPassengerDetails_lastName=//*[@id='content']/div[2]/div[2]/div[4]/div[1]/div/div[1]/div/div/div/div/p[1]/span[3]/input
+enterPassengerDetails_Mobile=//*[@id='content']/div[2]/div[2]/div[4]/div[1]/div/div[3]/p[2]/span[3]/input
+enterPassengerDetails_ContinueToPayment=Continue to payment

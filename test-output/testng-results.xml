@@ -2,12 +2,12 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="89405" started-at="2018-04-07T06:36:01Z" finished-at="2018-04-07T06:37:30Z">
+  <suite name="Default suite" duration-ms="77333" started-at="2018-04-07T16:30:47Z" finished-at="2018-04-07T16:32:04Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="89405" started-at="2018-04-07T06:36:01Z" finished-at="2018-04-07T06:37:30Z">
+    <test name="Default test" duration-ms="77333" started-at="2018-04-07T16:30:47Z" finished-at="2018-04-07T16:32:04Z">
       <class name="test_scripts.Assignment_MMT">
-        <test-method status="PASS" signature="MMT()[pri:0, instance:test_scripts.Assignment_MMT@6f7fd0e6]" name="MMT" duration-ms="89354" started-at="2018-04-07T06:36:01Z" finished-at="2018-04-07T06:37:30Z">
+        <test-method status="PASS" signature="MMT()[pri:0, instance:test_scripts.Assignment_MMT@27f723]" name="MMT" duration-ms="77297" started-at="2018-04-07T16:30:47Z" finished-at="2018-04-07T16:32:04Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- MMT -->

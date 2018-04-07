@@ -1,0 +1,4 @@
+loginIcon=ch_login_icon
+loginId=ch_login_email
+loginPassword=ch_login_password
+loginButton=ch_login_btn

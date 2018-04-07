@@ -1,0 +1,8 @@
+searchFrom=hp-widget__sfrom
+searchSourcePlace=ui-id-1
+searchTo=hp-widget__sTo
+searchDestinationPlace=ui-id-2
+searchListTag=li
+searchCalender=hp-widget__depart
+searchCalnederDates=//div[@class='ui-datepicker-group ui-datepicker-group-first']//table/tbody[1]//td
+searchButton=searchBtn
