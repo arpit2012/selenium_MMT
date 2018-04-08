@@ -5,7 +5,10 @@
     <classes>
       <class name="test_scripts.Assignment_MMT">
         <methods>
-          <include name="MMT"/>
+          <include name="endReport"/>
+          <include name="MMT_end_to_end"/>
+          <include name="startReport"/>
+          <include name="getResult"/>
         </methods>
       </class> <!-- test_scripts.Assignment_MMT -->
     </classes>

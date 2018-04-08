@@ -2,15 +2,34 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="77333" started-at="2018-04-07T16:30:47Z" finished-at="2018-04-07T16:32:04Z">
+  <suite name="Default suite" duration-ms="80166" started-at="2018-04-07T20:21:36Z" finished-at="2018-04-07T20:22:56Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="77333" started-at="2018-04-07T16:30:47Z" finished-at="2018-04-07T16:32:04Z">
+    <test name="Default test" duration-ms="80166" started-at="2018-04-07T20:21:36Z" finished-at="2018-04-07T20:22:56Z">
       <class name="test_scripts.Assignment_MMT">
-        <test-method status="PASS" signature="MMT()[pri:0, instance:test_scripts.Assignment_MMT@27f723]" name="MMT" duration-ms="77297" started-at="2018-04-07T16:30:47Z" finished-at="2018-04-07T16:32:04Z">
+        <test-method status="PASS" signature="startReport()[pri:0, instance:test_scripts.Assignment_MMT@612679d6]" name="startReport" is-config="true" duration-ms="357" started-at="2018-04-07T20:21:36Z" finished-at="2018-04-07T20:21:36Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- MMT -->
+        </test-method> <!-- startReport -->
+        <test-method status="PASS" signature="MMT_end_to_end()[pri:0, instance:test_scripts.Assignment_MMT@612679d6]" name="MMT_end_to_end" duration-ms="72843" started-at="2018-04-07T20:21:36Z" finished-at="2018-04-07T20:22:49Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- MMT_end_to_end -->
+        <test-method status="PASS" signature="getResult(org.testng.ITestResult)[pri:0, instance:test_scripts.Assignment_MMT@612679d6]" name="getResult" is-config="true" duration-ms="5" started-at="2018-04-07T20:22:49Z" finished-at="2018-04-07T20:22:49Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=MMT_end_to_end status=SUCCESS method=Assignment_MMT.MMT_end_to_end()[pri:0, instance:test_scripts.Assignment_MMT@612679d6] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getResult -->
+        <test-method status="PASS" signature="endReport()[pri:0, instance:test_scripts.Assignment_MMT@612679d6]" name="endReport" is-config="true" duration-ms="6939" started-at="2018-04-07T20:22:49Z" finished-at="2018-04-07T20:22:56Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- endReport -->
       </class> <!-- test_scripts.Assignment_MMT -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
