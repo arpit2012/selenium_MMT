@@ -1,32 +1,21 @@
 package test_scripts;
 
-import java.io.File;
 import java.io.FileInputStream;
 import java.util.List;
 import java.util.Properties;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.Assert;
-import org.testng.ITestResult;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-import com.relevantcodes.extentreports.ExtentReports;
-import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
 
-public class Assignment_MMT {
+public class Assignment_MMT extends MMT_PreCondition {
 
-	public static WebDriver wd;
 	public static WebDriverWait wait;
 	Properties LoginPageUIProp = new Properties();
 	Properties SearchPageUIProp = new Properties();
@@ -35,21 +24,6 @@ public class Assignment_MMT {
 	Properties EnterPassengerDetailsUIProp = new Properties();
 	Properties PaymentDetailsUIProp = new Properties();
 	Properties dataProp = new Properties();
-	ExtentReports extent;
-	ExtentTest logger;
-
-	@BeforeTest
-	public void startReport(){
-
-		extent = new ExtentReports (System.getProperty("user.dir")+"/test-output/STMExtentReport.html", true);
-
-		extent
-		.addSystemInfo("Host Name", "Mac")
-		.addSystemInfo("Application", "MakeMyTrip.com")
-		.addSystemInfo("User Name", "Arpit");
-
-		extent.loadConfig(new File(System.getProperty("user.dir")+"/extent-config.xml"));
-	}
 
 	public void login() throws Exception{
 
@@ -57,16 +31,16 @@ public class Assignment_MMT {
 		LoginPageUIProp.load(fisLoginUI);
 
 		wait = new WebDriverWait(wd, 10);
-		//utility.ScreenshotCode.screenShot();
+		//SSC.screenShot();
 		wd.findElement(By.id(LoginPageUIProp.getProperty("loginIcon"))).click();;
 		System.out.println("clicked on Login Button");
-		//utility.ScreenshotCode.screenShot();
+		//SSC.screenShot();
 		wait.until(ExpectedConditions.visibilityOf(wd.findElement(By.id("ch_login_email"))));
 		wd.findElement(By.id(LoginPageUIProp.getProperty("loginId"))).sendKeys(dataProp.getProperty("userid"));
 		wd.findElement(By.id(LoginPageUIProp.getProperty("loginPassword"))).sendKeys(dataProp.getProperty("password"));
 		System.out.println("Successfully entered login_Id password");
 		Thread.sleep(2000);
-		//utility.ScreenshotCode.screenShot();
+		//SSC.screenShot();
 		wd.findElement(By.id(LoginPageUIProp.getProperty("loginButton"))).click();
 		System.out.println("clicked on Login Button");
 		Thread.sleep(2000);
@@ -81,10 +55,10 @@ public class Assignment_MMT {
 		wd.findElement(By.id(SearchPageUIProp.getProperty("searchFrom"))).clear();
 		wd.findElement(By.id(SearchPageUIProp.getProperty("searchFrom"))).sendKeys(dataProp.getProperty("sourceCode"));
 		Thread.sleep(1000);
-		//utility.ScreenshotCode.screenShot();
+		//SSC.screenShot();
 		WebElement sourcePlace = wd.findElement(By.id(SearchPageUIProp.getProperty("searchSourcePlace")));
 		Thread.sleep(1000);
-		//utility.ScreenshotCode.screenShot();
+		//SSC.screenShot();
 		wait.until(ExpectedConditions.visibilityOf(sourcePlace));
 		Thread.sleep(1000);
 		List<WebElement> sourceOptionToSelect = sourcePlace.findElements(By.tagName(SearchPageUIProp.getProperty("searchListTag")));
@@ -102,10 +76,10 @@ public class Assignment_MMT {
 		wd.findElement(By.id(SearchPageUIProp.getProperty("searchTo"))).clear();
 		wd.findElement(By.id(SearchPageUIProp.getProperty("searchTo"))).sendKeys(dataProp.getProperty("destinationCode"));
 		Thread.sleep(1000);
-		//utility.ScreenshotCode.screenShot();
+		//SSC.screenShot();
 		WebElement destinationPlace = wd.findElement(By.id(SearchPageUIProp.getProperty("searchDestinationPlace")));
 		Thread.sleep(1000);
-		//utility.ScreenshotCode.screenShot();
+		//SSC.screenShot();
 		wait.until(ExpectedConditions.visibilityOf(destinationPlace));
 		Thread.sleep(1000);
 		List<WebElement> destinationOptionToSelect = destinationPlace.findElements(By.tagName(SearchPageUIProp.getProperty("searchListTag")));
@@ -215,57 +189,27 @@ public class Assignment_MMT {
 		FileInputStream fisData=new FileInputStream("/Users/Arpit/Documents/Eclipse_Worksapce/mavenTestNG/src/main/resources/DataMAP/Data.property");
 		dataProp.load(fisData);
 
-		System.setProperty("webdriver.gecko.driver", "/Users/Arpit/Documents/Eclipse_Worksapce/java_Project_3RI/ExecutableFile/geckodriver");
-		System.setProperty(FirefoxDriver.SystemProperty.BROWSER_LOGFILE, "/Users/Arpit/Documents/Selenium3_Jars/output");
-		wd = new FirefoxDriver();
-		wd.get(dataProp.getProperty("URL"));
-		wd.manage().window().maximize();
 
-		logger = extent.startTest("MMT_end_to_end");
+
+		ExtentReporting.logger = ExtentReporting.extent.startTest("MMT_end_to_end");
 
 		login();
-		logger.log(LogStatus.PASS, "Test Case Passed is MMT_Login");
+		ExtentReporting.logger.log(LogStatus.PASS, "Test Case Passed is MMT_Login");
 		search();
-		logger.log(LogStatus.PASS, "Test Case Passed is MMT_Search");
+		ExtentReporting.logger.log(LogStatus.PASS, "Test Case Passed is MMT_Search");
 		selectFlight();
-		logger.log(LogStatus.PASS, "Test Case Passed is MMT_SelectFlight");
+		ExtentReporting.logger.log(LogStatus.PASS, "Test Case Passed is MMT_SelectFlight");
 		reviewPage();
-		logger.log(LogStatus.PASS, "Test Case Passed is MMT_ReviewPage");
+		ExtentReporting.logger.log(LogStatus.PASS, "Test Case Passed is MMT_ReviewPage");
 		enterPassangerDetails();
-		logger.log(LogStatus.PASS, "Test Case Passed is MMT_EnterPassangerDetails");
+		ExtentReporting.logger.log(LogStatus.PASS, "Test Case Passed is MMT_EnterPassangerDetails");
 		paymentDetails();
-		logger.log(LogStatus.PASS, "Test Case Passed is MMT_PaymentDetails");
-	}
+		ExtentReporting.logger.log(LogStatus.PASS, "Test Case Passed is MMT_PaymentDetails");
 
-	@AfterMethod
-	public void getResult(ITestResult result){
-		if(result.getStatus() == ITestResult.FAILURE){
-
-
-			logger.log(LogStatus.FAIL, "Test Case Failed is "+result.getName());
-			logger.log(LogStatus.FAIL, "Test Case Failed is "+result.getThrowable());
-		}else if(result.getStatus() == ITestResult.SKIP){
-			logger.log(LogStatus.SKIP, "Test Case Skipped is "+result.getName());
-		}
-		// ending test
-		//endTest(logger) : It ends the current test and prepares to create HTML report
-		extent.endTest(logger);
-	}
-
-	@AfterTest
-	public void endReport() throws InterruptedException{
-
-		System.setProperty("webdriver.gecko.driver", "/Users/Arpit/Documents/Eclipse_Worksapce/java_Project_3RI/ExecutableFile/geckodriver");
-		System.setProperty(FirefoxDriver.SystemProperty.BROWSER_LOGFILE, "/Users/Arpit/Documents/Selenium3_Jars/output");
-		
 		Thread.sleep(3000);
-		wd=new FirefoxDriver();
-		wd.manage().window().maximize();
-		wd.get("file:///Users/Arpit/Documents/Eclipse_Worksapce/mavenTestNG/test-output/STMExtentReport.html") ; 
-		wd.navigate().refresh();
-		extent.flush();
-		extent.close();
 	}
+
+
 }
 
 //Arpit Agrawal

@@ -5,7 +5,8 @@
     <classes>
       <class name="test_scripts.Assignment_MMT">
         <methods>
-          <include name="MMT"/>
+          <include name="OpenBrowserAndLink"/>
+          <include name="MMT_end_to_end"/>
         </methods>
       </class> <!-- test_scripts.Assignment_MMT -->
     </classes>

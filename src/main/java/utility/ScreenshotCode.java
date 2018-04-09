@@ -10,7 +10,7 @@
 //
 //import test_scripts.Assignment_MMT;
 //
-//public class ScreenshotCode extends Assignment_MMT{
+//public class ScreenshotCode {
 //
 //	public static String GetCurrentTimeStamp()
 //	{
@@ -29,4 +29,3 @@
 //	}
 //
 //}
-//

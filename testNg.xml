@@ -2,7 +2,14 @@
 <suite name="Suite" parallel="false">
 	<test name="Test1">
 		<classes>
+			<class name="test_scripts.ExtentReporting" />
 			<class name="test_scripts.Assignment_MMT" />
+		</classes>
+	</test> <!-- Test -->
+
+	<test name="Test2">
+		<classes>
+			<class name="test_scripts.MMT_VerifyHomePageTitle" />
 		</classes>
 	</test> <!-- Test -->
 
